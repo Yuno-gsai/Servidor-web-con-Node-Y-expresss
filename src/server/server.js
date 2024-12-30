@@ -1,7 +1,7 @@
-const express = require('express');
-const path = require('path');
+import express  from 'express';
+import path from 'path';
 
-const startSercver = options =>{
+export const startSercver = options =>{
     const { port, public_path = 'public' } = options;
     const app = express();
     app.use(express.static(public_path));
@@ -12,8 +12,4 @@ const startSercver = options =>{
     app.listen(port, ()=>{
         console.log(`Escuchando en el puerto ${port}`);
     })
-}
-
-module.exports = {
-    startSercver
 }
